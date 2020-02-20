@@ -1,7 +1,7 @@
 os: linux
 dist: trusty
 
-language: shell
+language: java
 
 branches:
   only:

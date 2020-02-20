@@ -22,7 +22,7 @@ After replacing all variables:
 <!--
 [TODO] If project uses Coveralls for code coverage:
 
-[![Coverage Status](https://coveralls.io/repos/github/Monogramm/__app_slug__/badge.svg?branch=master)](https://coveralls.io/github/Monogramm/__app_slug__?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/AminovE99/private_parking_reservation/badge.svg?branch=master)](https://coveralls.io/github/AminovE99/private_parking_reservation?branch=master)
 -->
 <!--
 [TODO] If project is deployed to DockerHub:
@@ -32,17 +32,17 @@ After replacing all variables:
 [![Docker Version](https://images.microbadger.com/badges/version/monogramm/__app_slug__.svg)](https://microbadger.com/images/monogramm/__app_slug__)
 [![Docker Size](https://images.microbadger.com/badges/image/monogramm/__app_slug__.svg)](https://microbadger.com/images/monogramm/__app_slug__)
 -->
-[![GitHub stars](https://img.shields.io/github/stars/Monogramm/__app_slug__?style=social)](https://github.com/Monogramm/__app_slug__)
+[![GitHub stars](https://img.shields.io/github/stars/Monogramm/__app_slug__?style=social)](https://github.com/AminovE99/private_parking_reservation)
 
-# **__app_name__**
+# **Private parking reservation**
 
-> :alembic: __app_description__
+> :alembic: This application can give ability to private parking slot owners to register available slots in order to rent them by public users
 
 :construction: **This project is still in development!**
 
 ## :blue_book: Docs
 
-See GitHub Pages at [monogramm.github.io/__app_slug__](https://monogramm.github.io/__app_slug__/).
+See GitHub Pages at [Link to other documentation](Link to documentation).
 
 ## :chart_with_upwards_trend: Changes
 
@@ -53,7 +53,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## :bookmark: Roadmap
 
-See [Taiga.io](https://tree.taiga.io/project/monogrammbot-monogramm__app_slug__/ "Taiga.io monogrammbot-monogramm__app_slug__")
+See [Taiga.io](https://tree.taiga.io/project/aminove99-private-parking-reservation-application/backlog/ "Taiga.io monogrammbot-monogramm__app_slug__")
 
 ## :construction: Install
 
@@ -86,10 +86,10 @@ echo "[TODO] Describe how to execute Unit Tests"
 
 ## :bust_in_silhouette: Authors
 
-**Monogramm**
-
-* Website: https://www.monogramm.io
-* Github: [@Monogramm](https://github.com/Monogramm)
+**Command B**
+* [Aminov Emil](https://github.com/AminovE99)
+* [Aleksandrov Andrey](https://github.com/mitanil)
+* [Alekseev Vladislav](https://github.com/Vlad116)
 
 ## :handshake: Contributing
 
@@ -102,7 +102,7 @@ Give a :star: if this project helped you!
 
 ## :page_facing_up: License
 
-Copyright © 2019 [Monogramm](https://github.com/Monogramm).<br />
+Copyright © 2019 [Monogramm](https://github.com/AminovE99).<br />
 This project is [AGPL v3](uri_license) licensed.
 
 ***
