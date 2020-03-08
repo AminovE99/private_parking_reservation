@@ -8,6 +8,9 @@ branches:
     - master
     - develop
 
+before_install:
+  name="springbootapp"
+
 before_script:
   - env | sort
   - export TAG=travis
@@ -17,12 +20,10 @@ before_script:
 
 script:
   # Build project
-  - docker-compose -f .travis/docker-compose.yml build
-  # - docker-compose -f .travis/docker-compose.yml ps
+  - docker build ./ -t springbootapp
+  - docker build ./database -t postgres_database
   - docker images
-  - docker-compose -f .travis/docker-compose.yml up -d
-  - docker-compose -f .travis/docker-compose.yml ps
-  - docker-compose -f .travis/docker-compose.yml logs
+  - docker run springbootapp
   # Execute project Unit Tests
   - echo "[TODO] Test that your project Unit Tests execute properly"
   # Run project
