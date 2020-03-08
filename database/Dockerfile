@@ -1,0 +1,4 @@
+FROM postgres:9.3
+ENV POSTGRES_USER postgres
+ENV POSTGRES_PASSWORD megavova
+ENV POSTGRES_DB postgres
