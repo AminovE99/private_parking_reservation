@@ -20,7 +20,7 @@ before_script:
 
 script:
   # Build project
-  - docker build ./ -t springbootapp
+  - docker build ./parking -t springbootapp
   - docker build ./database -t postgres_database
   - docker images
   - docker run springbootapp
