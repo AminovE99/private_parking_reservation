@@ -20,6 +20,7 @@ before_script:
 
 script:
   # Build project
+  - mvn package
   - docker build ./parking -t springbootapp
   - docker build ./database -t postgres_database
   - docker images
