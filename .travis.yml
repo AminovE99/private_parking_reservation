@@ -18,9 +18,9 @@ before_script:
 script:
   # Build project
   - docker-compose -f .travis/docker-compose.yml build
-  - docker-compose -f .travis/docker-compose.yml ps
-  - travis_retry travis_wait 60 docker-compose .travis/docker-compose.yml build
+  # - docker-compose -f .travis/docker-compose.yml ps
   - docker images
+  - docker-compose -f .travis/docker-compose.yml logs springbootapp
   # Execute project Unit Tests
   - echo "[TODO] Test that your project Unit Tests execute properly"
   # Run project
