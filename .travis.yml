@@ -18,7 +18,8 @@ before_script:
 script:
   # Build project
   - docker-compose -f /.travis/docker-compose.yml ps
-  - travis_retry travis_wait 60 docker-compose -f /.travis/docker-compose.${DATABASE}.yml build
+  - travis_retry travis_wait 60 docker-compose docker-compose.yml build
+  - docker images
   # Execute project Unit Tests
   - echo "[TODO] Test that your project Unit Tests execute properly"
   # Run project
