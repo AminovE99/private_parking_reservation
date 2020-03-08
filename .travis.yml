@@ -20,8 +20,8 @@ script:
   - docker-compose -f .travis/docker-compose.yml build
   # - docker-compose -f .travis/docker-compose.yml ps
   - docker images
-  - docker-compose -f .travis/docker-compose.yml logs springbootapp
-  - docker logs springbootapp
+  - docker-compose -f .travis/docker-compose.yml logs
+  - echo "!!!!!!!!!!!!!!1"
   # Execute project Unit Tests
   - echo "[TODO] Test that your project Unit Tests execute properly"
   # Run project
