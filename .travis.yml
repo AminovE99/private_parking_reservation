@@ -1,7 +1,7 @@
 os: linux
 dist: trusty
 
-language: shell
+language: java
 
 branches:
   only:
@@ -10,6 +10,16 @@ branches:
 
 before_install:
   name="springbootapp"
+  image="springbootapp"
+
+install:
+  - mvn clean install dockerfile:build -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - chmod 755 docker-entrypoint.sh
+  - docker build --build-arg=target/*.jar -t "$image" "$dir"
+  - docker run --name "$name" -d "$image" "$dir" -eDB_PLATFORM=h2 -eAPP_VERIFIER_KEY_PASS=averysecretpasswordforjks
+  - docker logs "$name"
+  - docker logs "$name" | grep "Launching application..."
+  - docker stop "$name"
 
 before_script:
   - env | sort
@@ -19,16 +29,7 @@ before_script:
   - export IMAGE_NAME=springbootapp
 
 script:
-  # Build project
-  - mvn package
-  - docker build ./parking -t springbootapp
-  - docker build ./database -t postgres_database
-  - docker images
-  - docker run springbootapp
-  # Execute project Unit Tests
-  - echo "[TODO] Test that your project Unit Tests execute properly"
-  # Run project
-  - echo "[TODO] Test that your project runs properly"
+  - mvn test verify -P all-tests #For future tests
 
 notifications:
   email: false
