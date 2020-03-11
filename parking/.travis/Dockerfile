@@ -1,7 +1,6 @@
 FROM openjdk:8-jre-alpine
 
 # Expected JAR file path as argument
-ARG JAR_FILE
 RUN set -ex; \
 	mkdir -p /srv/app; \
 	chmod 755 /srv/app; \
@@ -22,11 +21,11 @@ WORKDIR /srv/app/
 EXPOSE 8080 8443
 
 COPY docker-entrypoint.sh /entrypoint.sh
-COPY ${JAR_FILE} /srv/app/app.jar
+COPY target/parking-0.1-kappa.jar /srv/app/app.jar
 
 
 
 RUN set -ex; \
 	chmod 755 /entrypoint.sh /srv/app/app.jar
 
-ENTRYPOINT ["java", "-Dspring.profiles.active=production", "-jar", "parking-0.1-kappa.jar"]
+ENTRYPOINT ["java", "-Dspring.profiles.active=production", "-jar", "app.jar"]
