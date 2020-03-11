@@ -24,12 +24,15 @@ install:
 before_script:
   - env | sort
   - export TAG=travis
-  - export VCS_REF=`git rev-parse --short HEAD`
   - export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
   - export IMAGE_NAME=springbootapp
+  - dir=".travis"
 
 script:
-  - mvn test verify -P all-tests #For future tests
+  - cd "$dir"
+  - travis_retry travis_wait 30 docker-compose -f docker-compose.yml build
+  - docker images
+#  - mvn test verify -P all-tests
 
 notifications:
   email: false

@@ -15,7 +15,7 @@ services:
       - POSTGRES_PASSWORD=megavova
   springbootapp:
     build:
-      context: parking
+      context: ..
       dockerfile: parking/Dockerfile
     container_name: springbootapp
     ports:
