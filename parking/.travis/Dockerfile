@@ -10,10 +10,10 @@ RUN set -ex; \
 	mkdir -p /srv/app/keys; \
 	mkdir -p /srv/app/config; \
 	# install dependencies
-	apk add --update \
-		openssh-keygen \
-		openssl \
-	; \
+#	apk add --update \
+#		openssh-keygen \
+#		openssl \
+#	; \
 	rm -rf /var/cache/apk/*
 
 VOLUME /srv/app/config /srv/app/keys /srv/app/logs /srv/app/data
@@ -29,5 +29,4 @@ COPY ${JAR_FILE} /srv/app/app.jar
 RUN set -ex; \
 	chmod 755 /entrypoint.sh /srv/app/app.jar
 
-ENTRYPOINT ["sh", "/entrypoint.sh"]
-CMD ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-Dspring.profiles.active=production", "-jar", "parking-0.1-kappa.jar"]

@@ -19,6 +19,7 @@ before_script:
 
 script:
   - cd "$FOLDER_NAME"
+  - mvn clean install
   - cd "$dir"
   - travis_retry travis_wait 30 docker-compose -f docker-compose.yml build
   - docker images
