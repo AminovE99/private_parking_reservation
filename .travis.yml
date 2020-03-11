@@ -12,24 +12,17 @@ before_install:
   container_name="springbootapp"
   image="springbootapp"
 
-install:
-  - mvn clean install
-  - chmod 755 docker-entrypoint.sh
-  - docker build --build-arg=target/*.jar -t "$image" "$dir"
-  - docker run --name container_name
-  - docker logs "$name"
-  - docker logs "$name" | grep "Launching application..."
-  - docker stop "$name"
-
 before_script:
   - env | sort
   - export TAG=travis
   - export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
   - export IMAGE_NAME=springbootapp
   - dir=".travis"
+  - export FOLDER_NAME=parking
 
 script:
   - cd "$dir"
+  - cd "$FOLDER_NAME"
   - travis_retry travis_wait 30 docker-compose -f docker-compose.yml build
   - docker images
 #  - mvn test verify -P all-tests
