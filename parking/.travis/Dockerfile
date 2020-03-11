@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-11
+FROM openjdk:8-jre-alpine
 
 # Expected JAR file path as argument
 ARG JAR_FILE

@@ -8,9 +8,6 @@ branches:
     - master
     - develop
 
-before_install:
-  container_name="springbootapp"
-  image="springbootapp"
 
 before_script:
   - env | sort
