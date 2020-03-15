@@ -2,7 +2,9 @@ version: "3"
 services:
   backend_db:
     image: postgres:10-alpine
+    restart: always
     container_name: backend_db
+    dockerfile: db.Dockerfile
     ports:
       - "5432"
     volumes:
@@ -10,9 +12,9 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
     environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=my_user
-      - POSTGRES_PASSWORD=megavova
+      - PG_DATABASES: postgres
+      - PG_USERS: my_user
+      - POSTGRES_PASSWORD: megavova
   springbootapp:
     build:
       context: .

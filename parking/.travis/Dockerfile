@@ -20,7 +20,6 @@ VOLUME /srv/app/config /srv/app/keys /srv/app/logs /srv/app/data
 WORKDIR /srv/app/
 EXPOSE 8080 8443
 
-COPY docker-entrypoint.sh /entrypoint.sh
 COPY target/parking-0.1-kappa.jar /srv/app/app.jar
 
 
