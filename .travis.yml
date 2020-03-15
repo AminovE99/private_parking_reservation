@@ -24,6 +24,7 @@ script:
   - cd ..
   - mvn clean install
   - docker images
+  - cd "$dir"
   - travis_retry docker-compose -f docker-compose.yml up -d && sleep 60
   - docker-compose -f docker-compose.yml ps
 #  - mvn test verify -P all-tests
