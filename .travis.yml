@@ -15,13 +15,14 @@ before_script:
   - export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
   - export IMAGE_NAME=springbootapp
   - dir=".travis"
-  - export FOLDER_NAME=parking
+  - export APP_FOLDER_NAME=parking
 
 script:
-  - cd "$FOLDER_NAME"
-  - mvn clean install
+  - cd "$APP_FOLDER_NAME"
   - cd "$dir"
   - travis_retry travis_wait 30 docker-compose -f docker-compose.yml build
+  - cd ..
+  - mvn clean install
   - docker images
   - travis_retry docker-compose -f docker-compose.yml up -d && sleep 60
   - docker-compose -f docker-compose.yml ps
