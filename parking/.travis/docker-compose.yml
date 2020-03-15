@@ -1,10 +1,12 @@
 version: "3"
 services:
   backend_db:
+    build:
+      context: .
+      dockerfile: db.Dockerfile
     image: postgres:10-alpine
     restart: always
     container_name: backend_db
-    dockerfile: db.Dockerfile
     ports:
       - "5432"
     volumes:
