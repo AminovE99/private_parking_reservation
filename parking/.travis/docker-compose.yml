@@ -12,9 +12,9 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
     environment:
-      - PG_DATABASES: postgres
-      - PG_USERS: my_user
-      - POSTGRES_PASSWORD: megavova
+      - PG_DATABASES: "postgres"
+      - PG_USERS: "my_user"
+      - POSTGRES_PASSWORD: "megavova"
   springbootapp:
     build:
       context: .
