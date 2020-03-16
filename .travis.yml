@@ -16,7 +16,9 @@ before_script:
   - export IMAGE_NAME=springbootapp
   - dir=".travis"
   - export APP_FOLDER_NAME=parking
-  - sudo -u postgres psql -c 'CREATE DATABASE postgres; CREATE ROLE my_user; GRANT ALL PRIVILEGES ON DATABASE postgres to my_user;'
+  - sudo -u postgres psql -c 'CREATE DATABASE postgres;'
+  - sudo -u postgres psql -c 'CREATE ROLE my_user;'
+  - sudo -u postgres psql -c 'GRANT ALL PRIVILEGES ON DATABASE postgres to my_user;'
 
 script:
   - cd "$APP_FOLDER_NAME"
