@@ -3,13 +3,14 @@ dist: trusty
 
 language: java
 
+services: docker
+
 branches:
   only:
-    - master
-    - develop
+  - gh-pages
+  - /.*/
 
 
-services: postgresql
 
 before_script:
   - env | sort
