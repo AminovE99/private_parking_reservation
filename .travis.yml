@@ -9,20 +9,22 @@ branches:
     - develop
 
 
+services: postgresql
+
 before_script:
   - env | sort
   - export TAG=travis
   - export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
   - export IMAGE_NAME=springbootapp
-  - dir=".travis"
   - export APP_FOLDER_NAME=parking
-  - sudo -u postgres psql -c 'CREATE ROLE my_user;'
+  - sudo -u postgres psql -c 'CREATE ROLE my_user WITH LOGIN PASSWORD megavova;'
   - sudo -u postgres psql -c 'GRANT ALL PRIVILEGES ON DATABASE postgres to my_user;'
 
 script:
   - cd "$APP_FOLDER_NAME"
   - cd "$dir"
   - travis_retry travis_wait 30 docker-compose -f docker-compose.yml build
+  - ls
   - cd ..
   - mvn clean install
   - docker images
@@ -37,6 +39,6 @@ notifications:
 matrix:
   allow_failures:
     - env: VERSION=0.1
-  
+
 env: # Environments
     - VERSION=1.0
