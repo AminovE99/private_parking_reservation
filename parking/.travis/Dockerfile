@@ -23,4 +23,8 @@ EXPOSE 8080 8443
 COPY target/parking-0.1-kappa.jar /srv/app/app.jar
 
 
+
+RUN set -ex; \
+	chmod 755 /entrypoint.sh /srv/app/app.jar
+
 ENTRYPOINT ["java", "-Dspring.profiles.active=production", "-jar", "app.jar"]
