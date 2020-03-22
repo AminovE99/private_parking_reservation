@@ -3,11 +3,6 @@ dist: trusty
 
 language: java
 
-branches:
-  only:
-    - master
-    - develop
-
 
 services: postgresql
 
