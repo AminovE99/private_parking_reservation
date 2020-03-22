@@ -22,8 +22,9 @@ before_script:
   - sudo -u postgres psql -c 'GRANT ALL PRIVILEGES ON DATABASE postgres to my_user;'
 
 script:
+  - sudo service postgresql stop
   - cd "$APP_FOLDER_NAME"
-  - docker-compose -f docker-compose.yml up --build && sleep 60
+  - docker-compose -f docker-compose.yml up -d --build && sleep 60
   - docker-compose -f docker-compose.yml ps
   # - mvn test verify -P all-tests
 
