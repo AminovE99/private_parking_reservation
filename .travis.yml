@@ -26,6 +26,8 @@ script:
   - cd "$APP_FOLDER_NAME"
   - docker-compose -f docker-compose.yml up -d --build && sleep 60
   - docker-compose -f docker-compose.yml ps
+  - docker-compose -f docker-compose.yml logs "springbootapp"
+  - docker-compose -f docker-compose.yml logs "postgres"
   - docker-compose -f docker-compose.yml ps "springbootapp" | grep "Up" || exit 1
   - docker-compose -f docker-compose.yml ps "postgres" | grep "Up" || exit 1
   # - mvn test verify -P all-tests
