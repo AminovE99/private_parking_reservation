@@ -1,7 +1,7 @@
 version: "3"
 services:
-  backend_db:
-    image: postgres:10-alpine
+  postgres:
+    image: postgres:10
     restart: always
     container_name: backend_db
     environment:
@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: megavova
       POSTGRES_DB: postgres
     ports:
-      - "5432:5432"
+      - 5432:5432
     volumes:
       - /srv/spring_rest_api_starter/db/data:/var/lib/postgresql/data
       - /etc/localtime:/etc/localtime:ro
@@ -21,7 +21,7 @@ services:
       dockerfile: Dockerfile
     container_name: springbootapp
     ports:
-    - "8080:8080"
+    - 8080:8080
     volumes:
       - /srv/private_parking_reservation/back/logs:/srv/app/logs
       - /srv/private_parking_reservation/back/keys:/srv/app/keys
@@ -30,4 +30,4 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
     depends_on:
-      - backend_db
+      - postgres
