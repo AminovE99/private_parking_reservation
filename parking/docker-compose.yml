@@ -29,3 +29,5 @@ services:
       - /srv/private_parking_reservation/back/data:/srv/app/data
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
+    depends_on:
+      - backend_db
