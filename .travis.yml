@@ -27,7 +27,7 @@ script:
   - docker images
   - travis_retry docker-compose -f docker-compose.yml up -d && sleep 60
   - docker-compose -f docker-compose.yml ps
-  - docker-compose -f docker-compose.yml logs springbootapp
+  -  travis_retry travis_wait 30 docker-compose -f docker-compose.yml logs springbootapp
 #  - mvn test verify -P all-tests
 
 notifications:
