@@ -23,8 +23,7 @@ before_script:
 
 script:
   - cd "$APP_FOLDER_NAME"
-  - docker-compose docker-compose build
-  - travis_retry docker-compose -f docker-compose.yml up -d && sleep 60
+  - docker-compose -f docker-compose.yml up -d --build && sleep 60
   - docker-compose -f docker-compose.yml ps
   # - mvn test verify -P all-tests
 
