@@ -9,7 +9,7 @@ services:
       POSTGRES_USER: my_user
       POSTGRES_DB: postgres
     ports:
-      - "5432"
+      - "5432:5432"
     volumes:
       - /srv/spring_rest_api_starter/db/data:/var/lib/postgresql/data
       - /etc/localtime:/etc/localtime:ro
