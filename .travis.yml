@@ -3,13 +3,14 @@ dist: trusty
 
 language: java
 
+services: docker
+
 branches:
   only:
-    - master
-    - develop
+  - master
+  - develop
 
 
-services: postgresql
 
 before_script:
   - env | sort
@@ -21,13 +22,15 @@ before_script:
   - sudo -u postgres psql -c 'GRANT ALL PRIVILEGES ON DATABASE postgres to my_user;'
 
 script:
+  - sudo service postgresql stop
   - cd "$APP_FOLDER_NAME"
-  - mvn clean install
-  - travis_retry travis_wait 30 docker-compose -f docker-compose.yml build
-  - travis_retry docker-compose -f docker-compose.yml up -d && sleep 60
+  - docker-compose -f docker-compose.yml up -d --build && sleep 60
   - docker-compose -f docker-compose.yml ps
-  - travis_retry travis_wait 30 docker-compose -f docker-compose.yml logs springbootapp
-#  - mvn test verify -P all-tests
+  - docker-compose -f docker-compose.yml logs "springbootapp"
+  - docker-compose -f docker-compose.yml logs "postgres"
+  - docker-compose -f docker-compose.yml ps "springbootapp" | grep "Up" || exit 1
+  - docker-compose -f docker-compose.yml ps "postgres" | grep "Up" || exit 1
+  # - mvn test verify -P all-tests
 
 notifications:
   email: false
