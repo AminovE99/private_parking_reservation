@@ -1,0 +1,33 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:10
+    restart: always
+    container_name: postgres
+    environment:
+      POSTGRES_USER: my_user
+      POSTGRES_PASSWORD: megavova
+      POSTGRES_DB: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - /srv/spring_rest_api_starter/db/data:/var/lib/postgresql/data
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+
+  springbootapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: springbootapp
+    ports:
+    - 8080:8080
+    volumes:
+      - /srv/private_parking_reservation/back/logs:/srv/app/logs
+      - /srv/private_parking_reservation/back/keys:/srv/app/keys
+      - /srv/private_parking_reservation/back/config:/srv/app/config
+      - /srv/private_parking_reservation/back/data:/srv/app/data
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    depends_on:
+      - postgres
