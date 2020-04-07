@@ -26,6 +26,12 @@ public class User {
     private String phonenumber;
     @Column
     private Roles role;
+    @Column
+    private String email;
+    @Column
+    private String login;
+    @Column
+    private String hash;
 
     @OneToOne
     @JoinColumn(name = "accountid", nullable = false)
