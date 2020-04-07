@@ -3,25 +3,34 @@ dist: trusty
 
 language: java
 
+services: docker
+
 branches:
   only:
-    - master
-    - develop
+  - master
+  - develop
+
+
 
 before_script:
   - env | sort
   - export TAG=travis
-  - export VCS_REF=`git rev-parse --short HEAD`
   - export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
-  - export IMAGE_NAME=__app_slug__
+  - export IMAGE_NAME=springbootapp
+  - export APP_FOLDER_NAME=parking
+  - sudo -u postgres psql -c 'CREATE ROLE my_user WITH LOGIN';
+  - sudo -u postgres psql -c 'GRANT ALL PRIVILEGES ON DATABASE postgres to my_user;'
 
 script:
-  # Build project
-  - echo "[TODO] Test that your project builds properly"
-  # Execute project Unit Tests
-  - echo "[TODO] Test that your project Unit Tests execute properly"
-  # Run project
-  - echo "[TODO] Test that your project runs properly"
+  - sudo service postgresql stop
+  - cd "$APP_FOLDER_NAME"
+  - docker-compose -f docker-compose.yml up -d --build && sleep 60
+  - docker-compose -f docker-compose.yml ps
+  - docker-compose -f docker-compose.yml logs "springbootapp"
+  - docker-compose -f docker-compose.yml logs "postgres"
+  - docker-compose -f docker-compose.yml ps "springbootapp" | grep "Up" || exit 1
+  - docker-compose -f docker-compose.yml ps "postgres" | grep "Up" || exit 1
+  # - mvn test verify -P all-tests
 
 notifications:
   email: false
@@ -29,6 +38,6 @@ notifications:
 matrix:
   allow_failures:
     - env: VERSION=0.1
-  
+
 env: # Environments
     - VERSION=1.0
