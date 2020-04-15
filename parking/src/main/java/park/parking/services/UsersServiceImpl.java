@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 import park.parking.dto.TokenDto;
 import park.parking.forms.LoginForm;
 import park.parking.forms.RegForm;
@@ -15,6 +16,7 @@ import park.parking.reps.UserRep;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Service
 public class UsersServiceImpl implements UsersService {
 
     private Integer expiredTime = 3600;
@@ -31,18 +33,27 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public void reg(RegForm regForm) {
+        System.out.println(regForm.getLogin());
+        System.out.println(regForm.getPassword());
+        System.out.println(regForm.getEmail());
+        System.out.println(regForm.toString());
         User user = User.builder()
-                .name(regForm.getName())
-                .surname(regForm.getSurname())
-                .phonenumber(regForm.getPhone())
+                .login(regForm.getLogin())
                 .email(regForm.getEmail())
+                .hash(regForm.getPassword())
+
+//                .phonenumber(regForm.getPhone())
                 .build();
+
         userRep.save(user);
     }
 
     @Override
     public TokenDto login(LoginForm loginForm) {
         User user = userRep.findByLogin(loginForm.getLogin());
+        System.out.println(user);
+        System.out.println(loginForm.getPassword());
+        System.out.println(passwordEncoder.matches(loginForm.getPassword(), user.getHash()));
         if (user == null) {
             return null;
         } else if (passwordEncoder.matches(loginForm.getPassword(), user.getHash())) {
