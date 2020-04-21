@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 import park.parking.dto.TokenDto;
 import park.parking.forms.LoginForm;
 import park.parking.forms.RegForm;
@@ -15,6 +16,7 @@ import park.parking.reps.UserRep;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Service
 public class UsersServiceImpl implements UsersService {
 
     private Integer expiredTime = 3600;

@@ -33,7 +33,9 @@ public class User {
     @Column
     private String hash;
 
-    @OneToOne
-    @JoinColumn(name = "accountid", nullable = false)
-    private Account account;
+    @Column
+    private Integer balance;
+//    @OneToOne
+//    @JoinColumn(name = "accountid", nullable = false)
+//    private Account account;
 }

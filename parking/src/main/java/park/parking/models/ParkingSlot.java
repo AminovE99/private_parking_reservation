@@ -29,8 +29,9 @@ public class ParkingSlot {
     private SlotsStatus slotsStatus;
     @Column
     private String photo_path;
-
-    @OneToOne
-    @JoinColumn(name ="parking_area_id", nullable = false)
-    private ParkingArea parkingArea;
+    @Column
+    private String location;
+//    @OneToOne
+//    @JoinColumn(name ="parking_area_id", nullable = false)
+//    private ParkingArea parkingArea;
 }
