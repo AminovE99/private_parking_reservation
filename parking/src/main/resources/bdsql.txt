@@ -21,7 +21,7 @@ create table if not exists "user"
 alter table "user" owner to postgres;
 
 create unique index if not exists user_id_uindex
-on "user" (id);
+	on "user" (id);
 
 create table if not exists account
 (

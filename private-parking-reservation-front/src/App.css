@@ -1,3 +1,161 @@
+/* @import 'antd/dist/antd.css'; */
+
+.footer {
+    flex: 0 0 auto;
+}
+
+.
+{
+    width: 100%;
+    height: 6.5%;
+    background-color: #6574FF;
+}
+
+.navbar-avatar {
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.nav-item {
+    /* по-умолчанию для <button>, но пригодится для <a> */
+    display: inline-block;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+    /* создаём маленькие отступы, если кнопки перенесутся на две строки */
+    /* margin: 2px 0; */
+    /* невидимая граница (понадобится для цвета при наведении/фокусе) */
+    border-bottom: solid 3px transparent;
+    /* размер строится из текста и отступов (без width/height) */
+    padding: 0.5em 1em;
+    /* убедитесь, что достаточно контраста! */
+    color: #ffffff;
+    /* background-color: #9555af; */
+}
+
+.nav-item-active {
+    /* по-умолчанию для <button>, но пригодится для <a> */
+    display: inline-block;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+    /* создаём маленькие отступы, если кнопки перенесутся на две строки */
+    /* margin: 2px 0; */
+    /* невидимая граница (понадобится для цвета при наведении/фокусе) */
+    border-bottom: solid 3px transparent;
+    /* размер строится из текста и отступов (без width/height) */
+    padding: 0.5em 1em;
+    color: rgb(180, 163, 245);
+    border-color: #ffffff;
+    /* background-color: #9555af; */
+}
+
+.nav-item:active {
+    color: rgb(180, 163, 245);
+    border-color: #ffffff;
+    transform: translateY(1px);
+    filter: saturate(150%);
+}
+
+.nav-item:hover,
+.nav-item:focus {
+    color: rgb(180, 163, 245);
+    border-color: #ffffff;
+}
+
+.nav-to {
+    color: #FFFFFF;
+    border: 1px solid rgb(49, 45, 45);
+    width: 260px;
+    height: 50px;
+    left: 510px;
+    top: 707px;
+    margin-left: 30%;
+    margin-top: 2%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: inline-block;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.nav-to:hover,
+.nav-to:focus {
+    color: rgb(180, 163, 245);
+    border-color: #c9c5c5;
+}
+
+hr {
+    width: 80%;
+    border-top: 1px #E2E5FF;
+}
+
+
+/* олдскульный эффект «нажатия» + цветовые правки */
+
+
+/* .nav-item:active {
+    color: #9555af;
+    border-color: currentColor;
+    background-color: white;
+    transform: translateY(1px);
+    filter: saturate(150%);
+} */
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    min-height: 100%;
+    /* max-width: 40rem; */
+    margin: 0 auto;
+    font-family: system-ui, sans-serif;
+    font-size: 90%;
+    line-height: 1.35;
+    color: black;
+    background-color: #f8f6f4;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+.auth {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(180deg, #6574FF 0%, rgba(116, 4, 169, 0.97) 100%), #6574FF;
+}
+
+.app {
+    height: 100%;
+    width: 100%;
+}
+
+.user-data {
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    margin: 1em;
+}
+
+.edit-btn {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    margin: 1em;
+}
+=======
 .App {
   text-align: center;
 }
