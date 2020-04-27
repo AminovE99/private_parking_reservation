@@ -16,7 +16,6 @@ import park.parking.services.UsersService;
 // Уверен есть изящнее
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-=======
 @RestController
 public class RegAuthContr {
     private ObjectMapper objectMapper = new ObjectMapper();
