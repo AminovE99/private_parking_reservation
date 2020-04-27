@@ -16,6 +16,7 @@ import park.parking.services.UsersService;
 // Уверен есть изящнее
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 @CrossOrigin(origins = "*", allowedHeaders = "*")
+=======
 @RestController
 public class RegAuthContr {
     private ObjectMapper objectMapper = new ObjectMapper();
@@ -35,9 +36,9 @@ public class RegAuthContr {
     }
 
 // response.data.token - так я хочу получать токен из response)
+
     @PostMapping("/login")
     public ResponseEntity<Object> login(@RequestBody String data) throws JsonProcessingException {
-        System.out.println(data);
         LoginForm loginForm = objectMapper.readValue(data, LoginForm.class);
         usersService.login(loginForm).getValue();
         return ResponseEntity.ok().build();

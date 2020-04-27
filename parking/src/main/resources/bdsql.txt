@@ -23,7 +23,6 @@ alter table "user" owner to postgres;
 create unique index if not exists user_id_uindex
 	on "user" (id);
 
-
 create table if not exists account
 (
     id bigserial not null
@@ -67,6 +66,7 @@ alter table parking_area owner to postgres;
 
 create unique index if not exists parking_area_id_uindex
     on parking_area (id);
+
 
 create table if not exists tokens
 (

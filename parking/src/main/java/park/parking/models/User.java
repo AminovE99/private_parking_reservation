@@ -1,4 +1,7 @@
 package park.parking.models;
+
+
+
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,7 +25,7 @@ public class User {
     private String surname;
     @Column
     private String phonenumber;
-    // Ролей может быть несколько у пользователя? (пусть дефолтное значение будет тоже)
+    // Ролей может быть несколько у пользователя? (пусть дефолтное значение будет тоже) TODO: Добавить дефолтное значение
     @Column
     private Roles role;
     @Column
