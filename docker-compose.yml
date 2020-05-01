@@ -17,8 +17,8 @@ services:
 
   springbootapp:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: parking
+      dockerfile: Dockerfile.spring
     container_name: springbootapp
     ports:
     - 8080:8080
@@ -31,3 +31,11 @@ services:
       - /etc/timezone:/etc/timezone:ro
     depends_on:
       - postgres
+
+  react:
+    build:
+      context: private-parking-reservation-front
+      dockerfile: Dockerfile.react
+    container_name: react
+    ports:
+      - "80:80"
