@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import AppName from '../universal-components/AppName'
 import SignUpForm from './SignUpForm'
-import Styles from '../Login/Styles'
+import styles from '../../resourse/LoginAndReg.css'
 
 const Register = ({ history }) => {
 
@@ -23,17 +23,12 @@ const Register = ({ history }) => {
     return (
         <div className='auth'>
             <AppName />
-            <label>Регистрация</label>
-            <div>
-                <Styles>
-                    <SignUpForm />
-                </Styles>
-            </div>
+            <SignUpForm />
 
-            <label>Уже регистрировались?</label>
-            <div>
-                <NavLink exact to="/login" className='nav-to'>
-                    <span>Перейти ко входу</span>
+            <div id="redirect" style={{paddingTop: '10%'}}>
+                <n>Уже регистрировались?</n>
+                <NavLink exact to="/login">
+                    <button>Перейти ко входу</button>
                 </NavLink>
             </div>
         </div>
