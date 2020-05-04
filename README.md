@@ -40,10 +40,6 @@ After replacing all variables:
 
 :construction: **This project is still in development!**
 
-## :blue_book: Docs
-
-See GitHub Pages at [Link to other documentation](Link to documentation).
-
 ## :chart_with_upwards_trend: Changes
 
 All notable changes to this project will be documented in [CHANGELOG](./CHANGELOG.md) file.
@@ -88,22 +84,14 @@ echo "[TODO] Describe how to execute Unit Tests"
 
 **Command B**
 * [Aminov Emil](https://github.com/AminovE99)
-* [Aleksandrov Andrey](https://github.com/mitanil)
+* Smolentsev Andrey
 * [Alekseev Vladislav](https://github.com/Vlad116)
-
-## :handshake: Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/Monogramm/__app_slug__/issues).
-[Check the contributing guide](./CONTRIBUTING.md).<br />
+* [Sinitsin_Oleg](https://github.com/olejiksin)
 
 ## :thumbsup: Show your support
 
 Give a :star: if this project helped you!
 
-## :page_facing_up: License
-
-Copyright © 2019 [Monogramm](https://github.com/AminovE99).<br />
-This project is [AGPL v3](uri_license) licensed.
 
 ***
 _This README was generated with :heart: by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
