@@ -1,11 +1,22 @@
 import React, { useState } from 'react'
 import { useForm, useField } from 'react-final-form-hooks'
 import { registerAction } from '../../store/features/auth/index'
-// import { useFormInput, useFormSubmit } from '../../hooks/customHooksForForm'
-// import SendFormButton from '../form-components/SendFormButton'
-// import FormInput from '../form-components/FormInput'
-// import '../form.css'
 import { useDispatch } from 'react-redux'
+
+import pswImg from '../../resourse/images/password.svg'
+import emailImg from '../../resourse/images/mail.svg'
+import loginImg from '../../resourse/images/login.svg'
+import styled from 'styled-components'
+
+
+const ImgInInput = styled.img`
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+`
 
 const validate = values => {
     const errors = {}
@@ -17,7 +28,7 @@ const validate = values => {
     if (!values.email) {
         errors.email = 'Введите почту!'
     }
-    
+
     if (!values.password) {
         errors.password = 'Введите пароль!'
     }
@@ -43,28 +54,43 @@ const SignUpForm = () => {
     const password = useField('password', form)
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <input {...login.input} placeholder="Ваш логин" />
-                {login.meta.touched &&
-                    login.meta.error && <span>{login.meta.error}</span>}
-            </div>
-            <div>
-                <input {...email.input} type='email' placeholder="Ваша почта" />
-                {email.meta.touched &&
-                    email.meta.error && <span>{email.meta.error}</span>}
-            </div>
-            <div>
-                <input {...password.input} type='password' placeholder="Ваш пароль" />
-                {password.meta.touched &&
-                    password.meta.error && <span>{password.meta.error}</span>}
-            </div>
-            <div className="button">
-                <button type="submit" disabled={submitting}>
-                    Зарегистрироваться
-                </button>
-            </div>
-        </form>
+        <div id='sign'>
+            <n>Регистрация</n>
+            <form onSubmit={handleSubmit}>
+                <div id='in'>
+                    <p>
+                        <ImgInInput src={loginImg} />
+                        <input {...login.input} 
+                            type='text' 
+                            placeholder='Ваш логин' />
+                        {login.meta.touched &&
+                            login.meta.error && <span>{login.meta.error}</span>}
+                    </p>
+                    <p>
+                        <ImgInInput src={emailImg} />
+                        <input {...email.input} 
+                            type='email' 
+                            placeholder='Ваша почта' />
+                        {email.meta.touched &&
+                            email.meta.error && <span>{email.meta.error}</span>}
+                    </p>
+                    <p>
+                        <ImgInInput src={pswImg} />
+                        <input {...password.input} 
+                            type='password' 
+                            placeholder='Ваш пароль' />
+                        {password.meta.touched &&
+                            password.meta.error && <span>{password.meta.error}</span>}
+                    </p>
+
+                    <button type='submit' 
+                        style={{ margin: 'auto', marginTop: '4%' }}
+                        disabled={submitting}>
+                        Зарегистрироваться
+                    </button>
+                </div>
+            </form>
+        </div>
     )
 }
 

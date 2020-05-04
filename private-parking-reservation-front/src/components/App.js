@@ -20,7 +20,7 @@ const App = () => {
 
     return (
         <div className='app'>
-            <Navbar />
+            {/* <Navbar /> */}
             {/* <Footer /> */}
             <Switch>
                 <Route exact path="/" component={HomePage} />

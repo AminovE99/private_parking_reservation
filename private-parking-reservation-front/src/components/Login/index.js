@@ -2,9 +2,43 @@ import React, { useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import AppName from '../universal-components/AppName'
-import Styles from './Styles'
+import styles from '../../resourse/LoginAndReg.css'
 import SignInForm from './SignInForm'
-// import { Field, reduxForm } from 'redux-form'
+import styled from 'styled-components'
+
+const linkToReg = styled.span`
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    border-radius: 10px;
+    background:  none;
+    border: 1px solid #ffffff;
+
+    font: 18px 'SF Display';
+    font-weight: 100;
+    color: #ffffff;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+`
+const Redirect = styled.div`
+    margin-left: 20%
+    position: relative;
+    height: 220px;
+`
+const Label = styled.label`
+    position: absolute;
+	width: 130px;
+	height: 21px;
+	bottom: 70px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	font: 18px 'SF Display';
+	font-weight: 100;
+	color: #ffffff;
+`
 
 export const Login = ({ history }) => {
 
@@ -21,39 +55,16 @@ export const Login = ({ history }) => {
         }
     }
 
-    // const submit = (values) => {
-    //     console.log(values)
-    //     dispatch(loginAction(values))
-    // }
-
-    // const handleOnSubmit = useCallback(e => {
-    //     e.preventDefault()
-    //     submit()
-    // }, [])
-
-    // const { handleSubmit } = this.props
-    // console.log(handleSubmit)
-
     return (
         <div className='auth'>
             <AppName />
-            <label>Войдите или создайте новую учетную запись</label>
-            <div>
-                <Styles>
-                    <SignInForm />
-                </Styles>
-
-                <div style={{ marginBottom: '20%' }}>
-                    <a href="#" className="forgot-pass">
-                        Забыли пароль?
-                        </a>
-                </div>
-            </div>
-
-            <label>Вы тут впервые?</label>
-            <div>
-                <NavLink exact to="/register" className='nav-to'>
-                    <span>Зарегистрироваться</span>
+            <SignInForm />
+            <div id='redirect' style={{paddingTop: '5%'}}>
+                <n style={{ left: '30px', right: '0px'}}>
+                    Вы тут впервые?
+                </n>
+                <NavLink exact to='/register'>
+                    <button>Зарегистрироваться</button>
                 </NavLink>
             </div>
         </div>
@@ -61,26 +72,3 @@ export const Login = ({ history }) => {
 }
 
 export default Login
-
-
-{/* <div className="container">
-                        <h2>Sign In</h2>
-                        <form onSubmit={handleOnSubmit}>
-                            <Field name="email"
-                                component="input"
-                                type="text"
-                                placeholder="Email"
-                            />
-                            <Field name="password"
-                                component="input"
-                                type="password"
-                                placeholder="Password"
-                            />
-                            <button type="submit" className="blue">Sign in</button>
-                        </form>
-                        {errorMessage()}
-                    </div>
-
-export default reduxForm({
-    form: 'login'
-})(Login) */}
