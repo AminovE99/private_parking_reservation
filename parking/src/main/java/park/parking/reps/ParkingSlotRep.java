@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 import park.parking.models.Account;
 import park.parking.models.ParkingSlot;
 import park.parking.models.SlotsStatus;
-
 import javax.transaction.Transactional;
 import java.util.List;
 

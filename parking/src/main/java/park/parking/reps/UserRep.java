@@ -12,7 +12,7 @@ import park.parking.models.User;
 import javax.transaction.Transactional;
 import java.util.Optional;
 
-@RepositoryRestResource(path = "user")
+@RepositoryRestResource(path = "parking_user")
 public interface UserRep extends JpaRepository<User, Long> {
 
     User findByLogin(String login);
