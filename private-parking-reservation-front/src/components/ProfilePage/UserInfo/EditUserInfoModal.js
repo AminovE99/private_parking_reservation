@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { Modal, Button } from 'antd';
+// import { Modal, Button } from 'antd';
 import EditUserInfoForm from './EditUserInfoForm'
 
 const EditUserInfoModal = () => {
@@ -28,19 +28,19 @@ const EditUserInfoModal = () => {
 
     return (
         <div>
-            <Button type="primary" onClick={showModal}>
+            {/* <Button type="primary" onClick={showModal}>
                 Редактировать
-            </Button>
-            <Modal
+            </Button> */}
+            {/* <Modal
                 title="Title"
                 visible={visible}
                 onOk={handleOk}
                 confirmLoading={confirmLoading}
                 onCancel={handleCancel}
-            >
+            > */}
                 <p>{ModalText}</p>
                 {/* <EditUserInfoForm /> */}
-            </Modal>
+            {/* </Modal> */}
         </div>
     )
 }

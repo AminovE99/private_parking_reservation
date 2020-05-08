@@ -6,6 +6,8 @@ import { Button } from 'antd'
 import { CameraOutlined } from '@ant-design/icons'
 import Gallery from './Gallery'
 import Map from './Map'
+import css from './add-parking-place.css'
+import cameraImg from '../../../resourse/images/camera.svg'
 
 const validate = values => {
     const errors = {}
@@ -72,6 +74,17 @@ const AddParkingPlace = () => {
     // сonst photos = useField('photos', form)
 
     return (
+        <div className='add-parking-place'>
+        <h1>Разместите парковочное место</h1>
+        <div className='add'>
+			<input type="text" placeholder="Укажите город"/>		
+			<input type="text" placeholder="Укажите улицу"/>		
+			<input type="text" placeholder="Укажите дом"/>		
+			<input type="text" placeholder="Установите цену"/>		
+			<button><div className="content"><img src={cameraImg} /><span>Загрузите фото</span></div></button>
+		</div>
+        <Map />
+        <Gallery />
         <form onSubmit={handleSubmit}>
             <div className='add-place-wrapper-with-map'>
                 <div className='add-place-inputs-wrapper'>
@@ -105,6 +118,7 @@ const AddParkingPlace = () => {
             <Gallery />
             <Button type='primary'>Сохранить</Button>
         </form>
+        </div>
     )
 }
 

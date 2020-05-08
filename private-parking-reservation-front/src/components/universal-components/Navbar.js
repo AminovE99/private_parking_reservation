@@ -1,8 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { Cascader, Badge, Avatar } from 'antd'
-import { UserOutlined, CarOutlined } from '@ant-design/icons'
 import userImg from '../../resourse/images/user.svg'
 import locImg from '../../resourse/images/loc.svg'
 import logoImg from '../../resourse/images/logo.svg'

@@ -335,7 +335,6 @@ span {
     position: relative;
     display: block;
     width: 100%;
-    margin-top: 6.5%;
     margin-bottom: 15%;
     height: 800px;
     color: #6574FF;
@@ -589,8 +588,8 @@ input[type=image] {
     width: 100%;
     /* bottom: 0; */
     height: 15%;
-    background-color: #6574FF;
-    /* background: linear-gradient(180deg, #6574FF 0%, rgba(116, 4, 169, 0.97) 100%), #6574FF; */
+    /* background-color: #6574FF; */
+    background: linear-gradient(180deg, #6574FF 0%, rgba(116, 4, 169, 0.97) 100%), #6574FF;
     color: #6574FF;
 }
 
@@ -700,7 +699,7 @@ input[type=image] {
     bottom: 0;
     right: 0;
     margin: auto;
-    padding-left: 25%;
+    padding-left: 0%;
 }
 
 .location {
@@ -708,8 +707,7 @@ input[type=image] {
     display: inline-block;
     width: 50%;
     height: 100%;
-    width: auto;
-    left: 0;
+    left: 15%;
     top: 65%;
     bottom: 0;
     margin: auto;
@@ -724,7 +722,7 @@ input[type=image] {
     bottom: 0;
     color: #ffffff;
     margin: auto;
-    padding-left: 55%;
+    padding-left: 3%;
 }
 
 .location img {
@@ -751,7 +749,7 @@ input[type=image] {
     top: 0;
     bottom: 0;
     right: unset;
-    left: 5%;
+    left: 0%;
     margin: auto;
 }
 
@@ -761,7 +759,7 @@ input[type=image] {
     width: auto;
     height: auto;
     top: 34%;
-    left: 50%;
+    left: 30%;
     bottom: 0;
     color: #ffffff;
     margin: auto;

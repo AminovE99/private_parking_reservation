@@ -131,6 +131,12 @@ body {
     width: 100%;
 }
 
+.content {
+    padding-top: 8%;
+    padding-bottom: 8%;
+    background-color: white;
+}
+
 .auth {
     height: 100%;
     width: 100%;

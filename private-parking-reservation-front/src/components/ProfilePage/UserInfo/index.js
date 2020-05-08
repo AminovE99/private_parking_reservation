@@ -1,7 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { Modal, Button } from 'antd';
 import { useSelector, useDispatch } from 'react-redux'
-// import SignInForm from '../SignInForm'
 import EditUserModal from './EditUserInfoModal'
 import EditUserInfoForm from './EditUserInfoForm'
 import avatarImg from '../../../resourse/images/avatar.svg'

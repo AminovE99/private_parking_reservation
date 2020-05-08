@@ -2,7 +2,6 @@ import React from 'react'
 import redoImg from '../../../resourse/images/redo.svg'
 import undoImg from '../../../resourse/images/undo.svg'
 
-
 const OperationHistoryItem = ({ item, direction, status }) => {
 
     const statusClassName = status === 'Арендуется' ? 'status1' : 'status2'

@@ -1,0 +1,175 @@
+/* pk places */
+
+.my-parking-places-page {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    background-color: #ffffff;
+    color: #6574FF;
+}
+
+
+/* .my-parking-places-page span {
+    color: #333333
+} */
+
+.my-parking-places-page h1 {
+    position: absolute;
+    font: 20px 'SF Display';
+    font-weight: 400;
+    margin-top: 50px;
+    margin-left: 90px;
+}
+
+.my-parking-places-page button {
+    position: relative;
+    float: right;
+    width: 220px;
+    height: 50px;
+    background-color: #6574FF;
+    border-radius: 6px;
+    font: 18px 'SF Display';
+    font-weight: 400;
+    border: none;
+    box-shadow: 0.1em 0.1em 4px rgba(122, 122, 122, 0.5);
+    margin-right: 19.5%;
+    margin-top: 37px;
+}
+
+.button-content {
+    position: relative;
+    width: 170px;
+    height: 24px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.button-content img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.button-content span {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.parking-places {
+    position: relative;
+    width: 90%;
+    height: 562px;
+    background-color: #ffffff;
+    box-shadow: 0.1em 0.1em 4px rgba(122, 122, 122, 0.5);
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 124px;
+}
+
+.vacant-parking-places {
+    position: relative;
+    width: 100%;
+    height: 354px;
+}
+
+.label {
+    position: relative;
+    width: 100%;
+    height: 61px;
+}
+
+.vacant-parking-places h2 {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 30px;
+    font: 18px 'SF Display';
+    color: #1DD746;
+    font-weight: 400;
+}
+
+.occupy-parking-places {
+    position: relative;
+    width: 100%;
+    height: 208px;
+}
+
+.occupy-parking-places h2 {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 30px;
+    font: 18px 'SF Display';
+    color: #FE2A2A;
+    font-weight: 400;
+}
+
+.parking-place-item {
+    position: relative;
+    width: 100%;
+    height: 84px;
+}
+
+.parking-place-item img {
+    position: absolute;
+    height: 20px;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    margin: auto;
+}
+
+.parking-place-item button {
+    position: absolute;
+    width: 180px;
+    height: 50px;
+    margin-right: 40px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+}
+
+.spaceinfo {
+    position: absolute;
+    width: 77%;
+    height: 21px;
+    top: 0;
+    bottom: 0;
+    left: 80px;
+    margin: auto;
+}
+
+.street {
+    position: absolute;
+    font: 18px 'SF Display';
+    color: #333333;
+    font-weight: 400;
+}
+
+.cost {
+    position: absolute;
+    font: 18px 'SF Display';
+    color: #6574FF;
+    font-weight: 400;
+    left: 54%;
+}
+
+.count {
+    position: absolute;
+    font: 18px 'SF Display';
+    color: #6574FF;
+    font-weight: 400;
+    left: 70%;
+}
+
+.day {
+    position: absolute;
+    font: 18px 'SF Display';
+    color: #C7C7C7;
+    font-weight: 400;
+    left: 84%;
+}

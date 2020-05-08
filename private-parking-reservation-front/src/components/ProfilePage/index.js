@@ -1,7 +1,7 @@
 import React from 'react'
 import UserInfo from './UserInfo/index'
 import OperationHistory from './OperationsHistory'
-import { Badge } from 'antd'
+// import { Badge } from 'antd'
 
 
 const ProfilePage = ({ history }) => {

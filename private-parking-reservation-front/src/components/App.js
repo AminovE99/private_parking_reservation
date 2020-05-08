@@ -21,6 +21,7 @@ const App = () => {
     return (
         <div className='app'>
             <Navbar />
+            <div className='content'>
             <Switch>
                 <Route exact path="/" component={HomePage} />
                 <Route path='/login' component={noRequireAuth(Login)} />
@@ -30,6 +31,7 @@ const App = () => {
                 <Route path='/my_parking_places' component={noRequireAuth(MyParkingPlaces)} />
                 <Route component={NotFoundPage} />
             </Switch>
+            </div>
             <Footer />
         </div>
     )

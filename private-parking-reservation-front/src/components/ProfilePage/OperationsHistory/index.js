@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import OperationHistoryItem from './OperationsHistoryItem'
 import axios from 'axios'
-import { List, Button } from 'antd'
 import messageImg from '../../../resourse/images/message.svg'
 
 const count = 3
@@ -53,7 +52,7 @@ const OperationHistory = ({ history }) => {
 
     const loadMore =
         !initLoading && !loading ? (
-            <div
+            {/* <div
                 style={{
                     textAlign: 'center',
                     marginTop: 12,
@@ -62,7 +61,7 @@ const OperationHistory = ({ history }) => {
                 }}
             >
                 <Button onClick={onLoadMore}>loading more</Button>
-            </div>
+            </div> */}
         ) : null
 
     return (

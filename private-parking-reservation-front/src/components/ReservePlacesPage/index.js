@@ -4,10 +4,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import Search from './Search'
 import Map from './Map'
 import ParkingList from './ParkingList/index'
+import css from './reserve-place-page.css'
 
 const ReservePlacesPage = ({ history }) => {
     return(
-        <div>
+        <div className='booking'>
             <Search />
             <Map />
             <ParkingList />
