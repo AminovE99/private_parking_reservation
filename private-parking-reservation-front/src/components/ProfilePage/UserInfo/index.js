@@ -1,12 +1,9 @@
 import React, { useState, useCallback } from 'react'
-import { Modal, Button } from 'antd';
 import { useSelector, useDispatch } from 'react-redux'
-// import SignInForm from '../SignInForm'
-import { Avatar } from 'antd'
-import { UserOutlined } from '@ant-design/icons'
 import EditUserModal from './EditUserInfoModal'
 import EditUserInfoForm from './EditUserInfoForm'
-
+import avatarImg from '../../../resourse/images/avatar.svg'
+import photoImg from '../../../resourse/images/photo.svg'
 
 const UserInfo = ({ history }) => {
 
@@ -25,35 +22,32 @@ const UserInfo = ({ history }) => {
             setVisible(false)
             setConfirmLoading(false)
         }, 1000)
-    };
+    }
 
     const handleCancel = () => {
         console.log('Clicked cancel button');
         setVisible(false)
-    };
+    }
 
-    // const userProfile = useSelector()
     return (
         <div className='user-info'>
-            <Avatar size={64} icon={<UserOutlined />} />
-            <div className='user-data'>
-                <div className='user-name'>
-                    <span>ФИО <span style={{ color: '#6574FF' }}>(login)</span></span>
-                </div>
-                <div className='user-age'>
-                    <span style={{ color: '#A7A7A7' }}>18 лет (20.02.1999)</span>
-                </div>
-                <div className='phone-number'>
-                    <span style={{ color: '#A7A7A7' }}>+7(987)323-42-42</span>
-                </div>
+            <div className='user-avatar'>
+                <img src={avatarImg} />
+                <input type='image' src={photoImg} />
             </div>
+            <div className='user-data'>
+                <h2 id='fio'>Иванов Иван Иванович <a id='login'>(ivan123)</a></h2>
+                <li id='age'>18 лет (27.09.2001)</li>
+    			<li id='phone-number'>+7(800)535-35-35</li>
+            </div>
+
             {/* TODO */}
-            <div className='edit-btn'>
+            {/* <div className='edit-btn'> */}
                 {/* <EditUserModal /> */}
-                <Button type="primary" onClick={showModal}>
+                <button type='button' onClick={showModal}>
                     Редактировать
-                    </Button>
-                <Modal
+                </button>
+                {/* <Modal
                     title="Title"
                     visible={visible}
                     onOk={handleOk}
@@ -70,8 +64,9 @@ const UserInfo = ({ history }) => {
                 >
                     <p>{ModalText}</p>
                     <EditUserInfoForm />
-                </Modal>
-            </div>
+                </Modal> */}
+            {/* </div> */}
+            <div className='border' />            
         </div>
     )
 }

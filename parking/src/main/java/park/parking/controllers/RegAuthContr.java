@@ -3,19 +3,15 @@ package park.parking.controllers;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import park.parking.forms.LoginForm;
 import park.parking.forms.RegForm;
+import park.parking.models.User;
+import park.parking.models.UserAfterLoginDto;
+import park.parking.models.UserDto;
+import park.parking.reps.UserRep;
 import park.parking.services.UsersService;
 
-// Запросы с моего урла не принимались серваком, одно из решений данная аннотация.
-// Уверен есть изящнее
-// https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class RegAuthContr {
     private ObjectMapper objectMapper = new ObjectMapper();
@@ -23,23 +19,35 @@ public class RegAuthContr {
     @Autowired
     private UsersService usersService;
 
+    @Autowired
+    private UserRep userRep;
 
-// Я хз должно ли что-то приходить в ответ при регистрации, 
-// (но пусть хотя бы статус приходит, что все норм добавилось)
     @PostMapping("/register")
-    public ResponseEntity<Object> reg(@RequestBody String data) throws JsonProcessingException {
-        System.out.println(data);
+    public void reg(@RequestBody String data) throws JsonProcessingException {
         RegForm regForm = objectMapper.readValue(data, RegForm.class);
         usersService.reg(regForm);
-        return ResponseEntity.ok().build();
     }
 
-// response.data.token - так я хочу получать токен из response)
-
     @PostMapping("/login")
-    public ResponseEntity<Object> login(@RequestBody String data) throws JsonProcessingException {
+    public UserAfterLoginDto login(@RequestBody String data) throws JsonProcessingException {
         LoginForm loginForm = objectMapper.readValue(data, LoginForm.class);
-        usersService.login(loginForm).getValue();
-        return ResponseEntity.ok().build();
+        return UserAfterLoginDto.builder()
+                .login(loginForm.getLogin())
+                .token(usersService.login(loginForm).getValue())
+                .build();
+    }
+
+
+    @GetMapping("/user/{login}")
+    public UserDto userProfilePage(@PathVariable("login") String login) {
+        User u = userRep.findByLogin(login);
+        return UserDto.builder()
+                .balance(u.getBalance())
+                .email(u.getEmail())
+                .name(u.getName())
+                .phonenumber(u.getPhonenumber())
+                .surname(u.getSurname())
+                .role(u.getRole())
+                .build();
     }
 }

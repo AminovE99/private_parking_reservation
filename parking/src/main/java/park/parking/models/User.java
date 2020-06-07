@@ -1,7 +1,6 @@
 package park.parking.models;
 
 
-
 import lombok.*;
 
 import javax.persistence.*;
@@ -25,7 +24,6 @@ public class User {
     private String surname;
     @Column
     private String phonenumber;
-    // Ролей может быть несколько у пользователя? (пусть дефолтное значение будет тоже) TODO: Добавить дефолтное значение
     @Column
     private Roles role;
     @Column
@@ -35,11 +33,9 @@ public class User {
     @Column
     private String hash;
 
-// Не очевидно что это! (счет юзера я так понимаю) 
-//      При регистрации когда проходит insert требует,
-// что бы было поле accountid не null, при это оно нигде не генерируется
-// и новая сущность account тоже не заводится
-    @OneToOne
-    @JoinColumn(name = "accountid", nullable = false)
-    private Account account;
+    @Column
+    private Integer balance;
+//    @OneToOne
+//    @JoinColumn(name = "accountid", nullable = false)
+//    private Account account;
 }

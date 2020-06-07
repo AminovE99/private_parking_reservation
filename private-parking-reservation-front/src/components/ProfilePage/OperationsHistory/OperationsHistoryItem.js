@@ -1,22 +1,20 @@
 import React from 'react'
-import { List, Skeleton } from 'antd'
+import redoImg from '../../../resourse/images/redo.svg'
+import undoImg from '../../../resourse/images/undo.svg'
 
-const OperationHistoryItem = ({ item }) => {
+const OperationHistoryItem = ({ item, direction, status }) => {
+
+    const statusClassName = status === 'Арендуется' ? 'status1' : 'status2'
+    const imgToShow = direction === 'redo' ? redoImg : undoImg
+
     return (
-        <List.Item
-            actions={[<a key="list-loadmore-edit">edit</a>, <a key="list-loadmore-more">more</a>]}
-        >
-            <Skeleton avatar title={false} loading={item.loading} active>
-                <List.Item.Meta
-                    /* avatar={
-                         <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                     } */
-                    title={<a href="https://ant.design">{item.name.last}</a>}
-                    description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-                />
-                <div>content</div>
-            </Skeleton>
-        </List.Item>
+        <div className='operation'>
+			<img src={imgToShow} />
+			<div className='notification'>Ваше место арендовали</div>
+			<div className='place'>ул. Вишнеского, д.61<div className='quantity'>1 место</div></div>
+			<div className='date'>13.03.2019</div>
+			<div className={statusClassName}>{status}</div>
+		</div>
     )
 }
 

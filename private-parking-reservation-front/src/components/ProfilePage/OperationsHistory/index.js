@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import OperationHistoryItem from './OperationsHistoryItem'
 import axios from 'axios'
-import { List, Button } from 'antd'
+import messageImg from '../../../resourse/images/message.svg'
 
 const count = 3
 const fakeDataUrl = `https://randomuser.me/api/?results=${count}&inc=name,gender,email,nat&noinfo`
@@ -52,7 +52,7 @@ const OperationHistory = ({ history }) => {
 
     const loadMore =
         !initLoading && !loading ? (
-            <div
+            {/* <div
                 style={{
                     textAlign: 'center',
                     marginTop: 12,
@@ -61,12 +61,22 @@ const OperationHistory = ({ history }) => {
                 }}
             >
                 <Button onClick={onLoadMore}>loading more</Button>
-            </div>
+            </div> */}
         ) : null
 
     return (
-        <div className='operation-history'>
-            <List
+        <div className='operations-history'>
+            <h1>История</h1>
+            {/* Переделать в норм badge с числом внутри (для navbar тоже)*/}
+		    <img src={messageImg} />
+            <div className='operations'>
+                <OperationHistoryItem direction={'redo'} status={'Арендуется'} />
+                <div className='br' />
+                <OperationHistoryItem direction={'undo'} status={'Завершено'} />
+                <div className='br' />
+                <OperationHistoryItem direction={'undo'} status={'Арендуется'} /> 
+            </div>
+            {/* <List
                 className="demo-loadmore-list"
                 loading={initLoading}
                 itemLayout="horizontal"
@@ -75,7 +85,7 @@ const OperationHistory = ({ history }) => {
                 renderItem={item => (
                     <OperationHistoryItem item={item} />
                 )}
-            />
+            /> */}
         </div>
     )
 }

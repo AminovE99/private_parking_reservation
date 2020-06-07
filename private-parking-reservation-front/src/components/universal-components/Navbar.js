@@ -1,8 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { Cascader, Badge, Avatar } from 'antd'
-import { UserOutlined, CarOutlined } from '@ant-design/icons'
+import userImg from '../../resourse/images/user.svg'
+import locImg from '../../resourse/images/loc.svg'
+import logoImg from '../../resourse/images/logo.svg'
 
 const Navbar = () => {
 
@@ -34,82 +35,50 @@ const Navbar = () => {
 
     return (
         <div className='navbar'>
+            <div className='logo-container'>
+                <img src={logoImg} />
+            </div>
 
-            <CarOutlined />
+            <nav className='menu'>
+                <li>
+                    <NavLink exact to='/' className='nav-item' activeClassName='nav-item-active'>
+                        <span>Забронировать</span>
+                    </NavLink>
+                </li>
 
-            <NavLink exact to="/" className='nav-item' activeClassName='nav-item-active'>
-                <span>Забронировать</span>
-            </NavLink>
+                <li>
+                    <NavLink exact to='/my_parking_places' className='nav-item' activeClassName='nav-item-active'>
+                        <span>Сдать</span>
+                    </NavLink>
+                </li>
 
-            <NavLink exact to="/my_parking_places" className='nav-item' activeClassName='nav-item-active'>
-                <span>Сдать</span>
-            </NavLink>
+                <li>
+                    <NavLink exact to='/help' className='nav-item' activeClassName='nav-item-active'>
+                        <span>Помощь</span>
+                    </NavLink>
+                </li>
 
-            <NavLink exact to="/profile" className='nav-item' activeClassName='nav-item-active'>
-                <span>Профиль</span>
-            </NavLink>
+                <li>
+                    <NavLink exact to='/about' className='nav-item' activeClassName='nav-item-active'>
+                        <span>О нас</span>
+                    </NavLink>
+                </li>
+            </nav>
 
-            <NavLink exact to="/login" className='nav-item' activeClassName='nav-item-active'>
-                <span>Вход</span>
-            </NavLink>
-
-            <NavLink exact to="/register" className='nav-item' activeClassName='nav-item-active'>
-                <span>Регистрация</span>
-            </NavLink>
-
-            <Cascader options={options} onChange={onChange} placeholder="Please select" />
-
-            <NavLink exact to="/profile">
-                <span className='navbar-avatar'>
-                    <Badge count={5}>
-                        <Avatar
-                            style={{
-                                backgroundColor: '#87d068',
-                            }}
-                            icon={<UserOutlined />}
-                        />
-                        {/* <span className="head-example" /> */}
-                    </Badge>
-                </span>
-            </NavLink>
-
+            <div className='profilebar'>
+                <div className='location'>
+                    <img src={locImg} />
+                    <span>Казань</span>
+                </div>
+                <NavLink exact to='/profile'>
+                    <div className='avatar'>
+                        <img src={userImg} />
+                        <span>Ваня</span>
+                    </div>
+                </NavLink>
+            </div>
         </div>
     )
 }
-
-const options = [
-    {
-        value: 'zhejiang',
-        label: 'Zhejiang',
-        children: [
-            {
-                value: 'hangzhou',
-                label: 'Hangzhou',
-                children: [
-                    {
-                        value: 'xihu',
-                        label: 'West Lake',
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        value: 'jiangsu',
-        label: 'Jiangsu',
-        children: [
-            {
-                value: 'nanjing',
-                label: 'Nanjing',
-                children: [
-                    {
-                        value: 'zhonghuamen',
-                        label: 'Zhong Hua Men',
-                    },
-                ],
-            },
-        ],
-    },
-]
 
 export default Navbar

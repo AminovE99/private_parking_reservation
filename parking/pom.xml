@@ -12,7 +12,6 @@
     <artifactId>parking</artifactId>
     <version>0.1-kappa</version>
     <name>parking</name>
-    <packaging>jar</packaging>
     <description>Demo project for Spring Boot</description>
 
     <properties>

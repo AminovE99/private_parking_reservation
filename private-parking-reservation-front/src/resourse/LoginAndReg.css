@@ -320,3 +320,448 @@ p img {
     font-weight: 100;
     src: url("https://sf.abarba.me/SF-UI-Display-Ultralight.otf");
 }
+
+span {
+    text-decoration: none;
+    color: #ffffff;
+    font: 18px 'SF Display';
+    font-weight: 400;
+}
+
+
+/* profile */
+
+.profile {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: 15%;
+    height: 800px;
+    color: #6574FF;
+}
+
+.profile h1 {
+    position: absolute;
+    font: 20px 'SF Display';
+    color: #6574FF;
+    font-weight: 400;
+    margin-top: 50px;
+    margin-left: 90px;
+}
+
+.profile button {
+    position: relative;
+    float: right;
+    width: 200px;
+    height: 50px;
+    background-color: #6574FF;
+    color: #fff;
+    border-radius: 6px;
+    font: 18px 'SF Display';
+    font-weight: 400;
+    border: none;
+    box-shadow: 0.1em 0.1em 4px rgba(122, 122, 122, 0.5);
+    margin-top: 130px;
+    margin-right: 15%;
+}
+
+.user-info {
+    position: relative;
+    width: 100%;
+    height: 40%;
+}
+
+.user-avatar {
+    position: absolute;
+    margin-top: 130px;
+    margin-left: 90px;
+}
+
+input[type=image] {
+    position: absolute;
+    margin-left: -55px;
+    margin-top: 142px;
+}
+
+.user-data {
+    position: absolute;
+    width: auto;
+    margin-top: 130px;
+    margin-left: 320px;
+}
+
+.user-data h2 {
+    margin: 0;
+    list-style-type: none;
+    color: #333333;
+    font: 28px 'SF Display';
+    font-weight: 400;
+}
+
+.user-data h3 {
+    margin: 0;
+    list-style-type: none;
+    color: #333333;
+    font: 28px 'SF Display';
+    font-weight: 400;
+}
+
+.user-data a {
+    color: #6574FF;
+    font: 28px 'SF Display';
+    font-weight: 400;
+}
+
+.user-data li {
+    margin-top: 4%;
+    list-style-type: none;
+    color: #A7A7A7;
+    font: 24px 'SF Display';
+    font-weight: 400;
+}
+
+
+/* history */
+
+.operations-history {
+    position: relative;
+    width: 100%;
+    height: 55%;
+    color: #6574FF;
+}
+
+
+/* .history span {
+
+} */
+
+.operations-history h1 {
+    position: absolute;
+    font: 20px 'SF Display';
+    font-weight: 400;
+    margin-top: 50px;
+    margin-left: 90px;
+}
+
+.operations-history img {
+    position: absolute;
+    margin-top: 52px;
+    margin-left: 175px;
+}
+
+.operations {
+    position: relative;
+    width: 90%;
+    height: auto;
+    left: 0;
+    right: 0;
+    top: 50px;
+    margin: auto;
+}
+
+.operation {
+    position: relative;
+    width: 100%;
+    height: 90px;
+    left: 0;
+    right: 0;
+    font-weight: 400;
+    padding-top: 8%;
+    padding-bottom: 35px;
+    margin: auto;
+}
+
+.operation img {
+    margin: 0;
+    height: 21px;
+}
+
+.notification {
+    position: absolute;
+    margin-left: 70px;
+    font: 18px 'SF Display';
+    color: #333333;
+    font-weight: 400;
+}
+
+.place {
+    position: absolute;
+    margin-top: 70px;
+    margin-left: 70px;
+    font: 18px 'SF Display';
+    color: #6574FF;
+    font-weight: 400;
+}
+
+.quantity {
+    position: absolute;
+    height: 21px;
+    width: 100%;
+    margin-left: 160%;
+    font: 18px 'SF Display';
+    color: #6574FF;
+    font-weight: 400;
+    margin-top: -21px;
+}
+
+.date {
+    position: absolute;
+    right: 0;
+    font: 18px 'SF Display';
+    color: #C7C7C7;
+    font-weight: 400;
+}
+
+.status1 {
+    margin-top: 70px;
+    position: absolute;
+    right: 0;
+    font: 18px 'SF Display';
+    color: #1DD746;
+    font-weight: 400;
+}
+
+.status2 {
+    margin-top: 70px;
+    position: absolute;
+    right: 0;
+    font: 18px 'SF Display';
+    color: #FF8B03;
+    font-weight: 400;
+}
+
+.status3 {
+    margin-top: 70px;
+    position: absolute;
+    right: 0;
+    font: 18px 'SF Display';
+    color: #FE2A2A;
+    font-weight: 400;
+}
+
+.communication {
+    position: absolute;
+    width: 280px;
+    margin: none;
+}
+
+.contacts {
+    position: absolute;
+    right: 0;
+    width: 280px;
+    margin: auto;
+}
+
+.icons input[type=image] {
+    position: relative;
+    margin: 0;
+    padding-right: 45px;
+}
+
+.br {
+    position: absolute;
+    background: #E2E5FF;
+    max-width: 100%;
+    height: 1px;
+    margin-top: 70px;
+    right: 0;
+    left: 0;
+}
+
+.border {
+    position: absolute;
+    background: #E2E5FF;
+    max-width: 90%;
+    height: 1px;
+    right: 0;
+    left: 0;
+    top: 365px;
+    margin: auto;
+}
+
+
+/* footer */
+
+.footer {
+    /* fixed - ? */
+    position: absolute;
+    width: 100%;
+    /* bottom: 0; */
+    height: 15%;
+    /* background-color: #6574FF; */
+    background: linear-gradient(180deg, #6574FF 0%, rgba(116, 4, 169, 0.97) 100%), #6574FF;
+    color: #6574FF;
+}
+
+.icons {
+    position: absolute;
+    width: 90%;
+    height: 40%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+#header {
+    position: relative;
+    height: 77px;
+    width: 700px;
+    margin: auto;
+    margin-top: 60px;
+}
+
+#header n {
+    position: absolute;
+    font: 58px 'SF Display';
+    font-weight: 100;
+    color: #ffffff;
+    width: auto;
+    height: 58px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+.userprofile {
+    position: absolute;
+    height: 80px;
+    width: auto;
+    right: 90px;
+    margin: auto;
+}
+
+.userprofile img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: unset;
+    left: -50px;
+    margin: auto;
+}
+
+
+/* navbar */
+
+.navbar {
+    /* fixed - ? */
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 10%;
+    /* background: linear-gradient(180deg, #6574FF 0%, rgba(116, 4, 169, 0.97) 100%), #6574FF; */
+    background-color: #6574FF;
+}
+
+.logo-container {
+    display: inline-block;
+    width: 10%;
+    height: 0;
+    padding-top: 1.5%;
+    position: relative;
+}
+
+.logo-container img {
+    position: relative;
+    left: 25%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.menu {
+    display: inline-block;
+    position: absolute;
+    height: 20%;
+    width: 60%;
+    left: 5%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.menu li {
+    height: 21px;
+    display: inline-block;
+    padding-left: 50px;
+}
+
+.profilebar {
+    height: 100%;
+    width: 30%;
+    position: absolute;
+    float: right;
+    font: 18px 'SF Display';
+    font-weight: 400;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    padding-left: 0%;
+}
+
+.location {
+    position: absolute;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    left: 15%;
+    top: 65%;
+    bottom: 0;
+    margin: auto;
+}
+
+.location span {
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    width: auto;
+    top: 0;
+    bottom: 0;
+    color: #ffffff;
+    margin: auto;
+    padding-left: 3%;
+}
+
+.location img {
+    display: inline-block;
+}
+
+.avatar {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    display: inline-block;
+    top: 0;
+    bottom: 0;
+    right: unset;
+    left: 45%;
+    margin: auto;
+}
+
+.avatar img {
+    position: absolute;
+    display: inline-block;
+    height: 70%;
+    width: auto;
+    top: 0;
+    bottom: 0;
+    right: unset;
+    left: 0%;
+    margin: auto;
+}
+
+.avatar span {
+    display: inline-block;
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 34%;
+    left: 30%;
+    bottom: 0;
+    color: #ffffff;
+    margin: auto;
+    padding-left: 15%;
+}

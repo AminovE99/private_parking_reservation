@@ -13,6 +13,7 @@ const linkToReg = styled.span`
     border-radius: 10px;
     background:  none;
     border: 1px solid #ffffff;
+
     font: 18px 'SF Display';
     font-weight: 100;
     color: #ffffff;

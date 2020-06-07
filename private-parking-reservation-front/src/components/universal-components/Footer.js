@@ -1,43 +1,26 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import phoneImg from '../../resourse/images/phone.svg'
+import chatImg from '../../resourse/images/chat.svg'
+import instaImg from '../../resourse/images/instagramm.svg'
+import youtubeImg from '../../resourse/images/youtube.svg'
+import vkImg from '../../resourse/images/vk.svg'
 
-const Navbar = () => {
-
-    // const authenticated = useSelector(state => state.get('auth').get('authenticated'))
-
-    // console.log(authenticated)
-
-    // const navbarLinks = () => {
-    //     if (authenticated) {
-    //         return [
-    //             {/* <li key="profile"><Link to="/profile">Profile</Link></li>,
-    //             <li key="signout"><Link to="/signout">Sign out</Link></li> */}
-    //         ]
-    //     }
-    //     return [
-    //         {/* <li key="signin"><Link to="/signin">Sign in</Link></li>,
-    //         <li key="signup"><Link to="/signup">Sign up</Link></li> */}
-    //     ]
-    // }
-
-    // const onChange = (value) => {
-    //     console.log('change city action (&)')
-    //     console.log(value)
-    // }
-
-    // if (authenticated) {
-
-    // }
-
+const Footer = () => {
     return (
-        <div className='footer'>
-            <a href='#'><img src='C:\Users\vlada\Desktop\learningjs\parking-reserve\src\resourse\Vector.png'/></a>
-            <a href='#'><img src='C:\Users\vlada\Desktop\learningjs\parking-reserve\src\resourse\Vector.png'/></a>
-            <a href='#'><img src='C:\Users\vlada\Desktop\learningjs\parking-reserve\src\resourse\Vector.png'/></a>
-            <a href='#'><img src='C:\Users\vlada\Desktop\learningjs\parking-reserve\src\resourse\Vector.png'/></a>
-            <a href='#'><img src='C:\Users\vlada\Desktop\learningjs\parking-reserve\src\resourse\Vector.png'/></a>
-        </div>
+		<footer className='footer'>
+			<div className='icons'>
+				<div className='communication'>
+					<input type='image' src={phoneImg} />
+					<input type='image' src={chatImg} />
+				</div>
+				<div className='contacts'>
+					<input type='image' src={instaImg} />
+					<input type='image' src={youtubeImg} />
+					<input type='image' src={vkImg} />
+				</div>
+			</div>
+		</footer>
     )
 }
 
-export default Navbar
+export default Footer

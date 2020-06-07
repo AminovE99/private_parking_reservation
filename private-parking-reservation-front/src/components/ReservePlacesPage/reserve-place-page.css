@@ -1,0 +1,193 @@
+.booking {
+    width: 100%;
+    height: 900px;
+    background-color: #ffffff;
+}
+
+.search-form {
+    position: relative;
+    width: 90%;
+    height: 46px;
+    left: 0;
+    right: 0;
+    top: 50px;
+    margin: auto;
+}
+
+.parameters {
+    position: relative;
+    width: 420px;
+    float: right;
+}
+
+.search-form input[type=search] {
+    position: absolute;
+    width: 95%;
+    height: 46px;
+    border: 2px solid #6574FF;
+    border-radius: 6px 0px 0px 6px;
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    color: #6574FF;
+    font: 18px 'SF Display';
+    font-weight: 400;
+}
+
+.search-form input[type=text] {
+    position: relative;
+    float: right;
+    width: 127px;
+    height: 42px;
+    border: 2px solid #6574FF;
+    margin-left: -3px;
+    padding: 0;
+    padding-left: 10px;
+    color: #6574FF;
+    font: 18px 'SF Display';
+    font-weight: 400;
+}
+
+.search-form input[type=submit] {
+    position: relative;
+    float: right;
+    width: 150px;
+    height: 46px;
+    background-color: #6574FF;
+    color: #ffffff;
+    border: none;
+    border-radius: 0px 6px 6px 0px;
+    padding: 0;
+    font: 18px 'SF Display';
+    font-weight: 400;
+}
+
+.search-form input::placeholder {
+    color: #ADB5FF;
+    font: 16px 'SF Display';
+    font-weight: 400;
+}
+
+.search-form input[type=search]::placeholder {
+    color: #6574FF;
+    font: 20px 'SF Display';
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.map {
+    position: relative;
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.map img {
+    width: 100%;
+}
+
+.parking-list {
+    position: relative;
+    width: 90%;
+    height: 22.5%;
+    left: 0;
+    right: 0;
+    top: 25px;
+    margin: auto;
+    box-shadow: 0.1em 0.1em 4px rgba(122, 122, 122, 0.5);
+}
+
+.parking-list-item {
+    position: relative;
+    width: 100%;
+    height: 75px;
+    left: 0;
+    right: 0;
+    top: 25px;
+    bottom: 25px;
+    margin: auto;
+}
+
+.parking-list-item img {
+    position: absolute;
+    width: 14px;
+    left: 50px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.parking-list-item button {
+    position: absolute;
+    float: right;
+    width: 180px;
+    height: 50px;
+    border: none;
+    border-radius: 6px;
+    background-color: #6574FF;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    margin-right: 50px;
+    color: #ffffff;
+    font: 18px 'SF Display';
+    font-weight: 400;
+}
+
+.location {
+    position: absolute;
+    height: 24px;
+    color: #333333;
+    font: 20px 'SF Display';
+    font-weight: 400;
+    top: 0;
+    bottom: 0;
+    left: 80px;
+    margin: auto;
+}
+
+.empty {
+    position: absolute;
+    width: 115px;
+    height: 24px;
+    color: #333333;
+    font: 20px 'SF Display';
+    font-weight: 400;
+    top: 0;
+    bottom: 0;
+    left: 32%;
+    margin: auto;
+}
+
+.num {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    color: #6574FF;
+}
+
+.cost {
+    position: absolute;
+    height: 24px;
+    color: #6574FF;
+    font: 20px 'SF Display';
+    font-weight: 400;
+    top: 0;
+    bottom: 0;
+    left: 48%;
+    margin: auto;
+}
+
+.renter img {
+    position: absolute;
+    width: 24px;
+    left: 50px;
+    top: 0;
+    bottom: 0;
+    left: 77%;
+    margin: auto;
+}
